@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content%}
+
+
+
+{% if api %}
+	{% if api == "Error ...." %}
+		there was a problem with your ticker symbol,
+		please try again
+	{% else %}
+		
+		<h1>{{ api.companyName }}</h1><br/>
+		Price: ${{ api.latestPrice }}<br/>
+		Previous price: {{ api.previousClose }}<br/>
+		YTDChange: {{ api.ytdChange }}<br/>
+	{% endif%}
+{% endif %}
+{% endblock %}
